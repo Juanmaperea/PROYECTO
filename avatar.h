@@ -19,13 +19,20 @@ class Avatar {
 public:
 	Avatar();
   ~Avatar();
+  void AsignarValores(char T);
+  float SetPoder();
+  float SetMana();
+  float SetVida();
 
 protected:
 
 private:
   float Poder;
   float Mana;
-  bool Postura;
+  float Vida;
+  string Tipo;
+  //bool Postura;
+
   
 };
 

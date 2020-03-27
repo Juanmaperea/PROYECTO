@@ -12,21 +12,32 @@
 #include <math.h>
 #include<stack>
 
-using std::string;
 using namespace std;
+using std::string;
+#include "caja.h"
 
 class Tablero {
 
 public:
 	Tablero();
   ~Tablero();
+  void cargar();
+
+  static const int Tamano = 10;
+
+  void LeerArchivo();
+  void ImprimirTablero();
+  void AsignarCajas();
 
 protected:
 
 private:
-  int DimensionX;
-  int DimensionY;
+  int tablero[Tamano][Tamano];
+  //Caja Matriz[Tamano][Tamano];
+  vector < string > ejercito1;
+  vector < string > ejercito2;
 
+  
 };
 
 #endif 

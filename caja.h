@@ -19,7 +19,7 @@ class Caja {
 public:
 	Caja();
   ~Caja();
-
+  void AsignarValores();
 protected:
 
 private:

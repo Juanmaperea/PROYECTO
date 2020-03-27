@@ -10,7 +10,8 @@
 #include <string>
 #include <fstream>
 #include <math.h>
-
+//#include"tablero.h"
+//#include"tablero.cpp"
 using std::string;
 using namespace std;
 
@@ -19,12 +20,19 @@ class Ejercito {
 public:
 	Ejercito();
   ~Ejercito();
+  void AsignarPostura(int P);
+  void Composicion();
+  void ValoresTotales();
 
 protected:
 
 private:
   int NumIntegrantes;
-  bool Tipo;
+  string Tipo;
+  float PoderTotal;
+  float ManaTotal;
+  float VidaTotal;
+  vector < char > Equipo;
 
 };
 
