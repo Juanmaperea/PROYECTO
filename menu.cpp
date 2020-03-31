@@ -133,6 +133,7 @@ void Menu::EjecutarMenu(int Opc, Tablero tablero) {
     cout<<endl;
     cout<<"El juego ha sido guardado."<<endl;
     cout<<endl;
+    tablero.ImprimirTablero();
   }
   else if (Opcion == 3) {
     cout << "Partida Cargada." << endl;
