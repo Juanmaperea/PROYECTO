@@ -20,4 +20,4 @@ Instrucciones.
 5. Disfrute del juego.
 6. Para salir del juego, ingrese la opción 4 a la consola.
 
-El código puede ejecutarse desde cualquier interfaz de desarrollo compatible con C++. Los resultados de la ejecución del código se visualiza en la consola y en los archivos planos usados.
+El código puede ejecutarse desde cualquier interfaz de desarrollo compatible con C++. Los resultados de la ejecución del código se visualizan en la consola y en los archivos planos usados.
