@@ -1,6 +1,8 @@
+// Guardas:
 #ifndef _CAJA_H_
 #define _CAJA_H_
 
+// Librerías a usar:
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -14,18 +16,21 @@
 using std::string;
 using namespace std;
 
+// Clase:
 class Caja {
   
 public:
+// Constructor de la clase:
 	Caja();
+// Destructor de la clase:
   ~Caja();
-  void AsignarValores();
+// Métodos:
+
 protected:
 
 private:
-  int Numero;
-  int Valor;
-  int Torreta;
+// Atributos y/o variables:
+
 };
 
 #endif 

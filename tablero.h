@@ -1,6 +1,8 @@
+// Guardas:
 #ifndef _TABLERO_H_
 #define _TABLERO_H_
 
+// Librerías a usar:
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -10,33 +12,37 @@
 #include <string>
 #include <fstream>
 #include <math.h>
-#include<stack>
+#include <stack>
 
 using namespace std;
 using std::string;
-#include "caja.h"
 
+// Clase:
 class Tablero {
 
 public:
+// Constructor de la clase:
 	Tablero();
+// Destructor de la clase:
   ~Tablero();
-  void cargar();
 
+// Contante fija:
   static const int Tamano = 10;
 
-  void LeerArchivo();
+// Métodos:
+  void GuardarPartida(string Ruta2);
+  void LeerArchivo(string Ruta1);
   void ImprimirTablero();
-  void AsignarCajas();
 
 protected:
 
 private:
+// Atributos y/o variables:
   int tablero[Tamano][Tamano];
-  //Caja Matriz[Tamano][Tamano];
   vector < string > ejercito1;
   vector < string > ejercito2;
-
+  vector < int > posicion1;
+  vector < int > posicion2;
   
 };
 

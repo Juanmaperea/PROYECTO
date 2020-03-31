@@ -1,6 +1,8 @@
+// Guardas:
 #ifndef _AVATAR_H_
 #define _AVATAR_H_
 
+// Librerías a usar:
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -14,25 +16,20 @@
 using std::string;
 using namespace std;
 
+// Clase:
 class Avatar {
 
 public:
+// Constructor de la clase:
 	Avatar();
+// Destructor de la clase:
   ~Avatar();
-  void AsignarValores(char T);
-  float SetPoder();
-  float SetMana();
-  float SetVida();
+// Métodos:
 
 protected:
 
 private:
-  float Poder;
-  float Mana;
-  float Vida;
-  string Tipo;
-  //bool Postura;
-
+// Atributos y/o variables:
   
 };
 

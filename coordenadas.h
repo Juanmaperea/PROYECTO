@@ -1,6 +1,8 @@
+// Guardas:
 #ifndef _COORDENADA_H_
 #define _COORDENADA_H_
 
+// Librerías a usar:
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -14,17 +16,22 @@
 using std::string;
 using namespace std;
 
+// Clase:
 class Coordenada {
 
 public:
+// Constructor de la clase:
 	Coordenada();
+// Destructor de la clase:
   ~Coordenada();
+
+// Métodos:
 
 protected:
 
 private:
-  int X;
-  int y;
+// Atributos y/o variables:
+
 };
 
 #endif 

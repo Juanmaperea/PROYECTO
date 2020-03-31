@@ -1,6 +1,8 @@
+// Guardas:
 #ifndef _EJERCITO_H_
 #define _EJERCITO_H_
 
+// Librerías a usar:
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -10,29 +12,25 @@
 #include <string>
 #include <fstream>
 #include <math.h>
-//#include"tablero.h"
-//#include"tablero.cpp"
+
 using std::string;
 using namespace std;
 
+// Clase:
 class Ejercito {
 
 public:
+// Constructor de la clase:
 	Ejercito();
+// Destructor de la clase:
   ~Ejercito();
-  void AsignarPostura(int P);
-  void Composicion();
-  void ValoresTotales();
+
+// Métodos:
 
 protected:
 
 private:
-  int NumIntegrantes;
-  string Tipo;
-  float PoderTotal;
-  float ManaTotal;
-  float VidaTotal;
-  vector < char > Equipo;
+// Atributos y/o variables:
 
 };
 

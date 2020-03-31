@@ -1,3 +1,12 @@
+/*
+Autores: 
+Juan Manuel Perea Coronado - 1926462.
+Johan Esteban Riveros Giraldo - 1927397.
+Erick Santiago Andrade Gutierrez - 1927286.
+Resumen: Juego Code Legends.
+*/
+
+// Librerías a  implementar:
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -9,16 +18,19 @@
 #include <math.h>
 #include<stack>
 
+// Archivos a ejecutar:
+#include "menu.h"
 #include "tablero.h"
-//#include "ejercito.h"
+
 using std::string;
 using namespace std;
 
+
 int main() {
-  Tablero Prueba1;
-  Prueba1.LeerArchivo();
-  Prueba1.ImprimirTablero();
-  
- // Ejercito Prueba2;
- // Prueba2.AsignarPostura(1);
+
+  Menu Partida;
+  Tablero tablero;
+  int Opc;
+  Partida.IniciarMenu(Opc,tablero);
+
 }
