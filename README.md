@@ -33,7 +33,7 @@ INSTRUCCIONES PARA JUGAR:
 
 Para jugar a Code Legends:
 
-1. Seleccione la opción 1."Juengo Nuevo".
+1. Seleccione la opción 1."Juego Nuevo".
 2. Escoja el ejército con el que jugará el turno ingresando "1" para el ejército atacante o "2" para ejército defensor.
 3. Escoja la dirección a la que se quiera mover: "W" para arriba, "S" para abajo, "A" para izquierda y "D" para derecha.
 4. Si lo desea, puede atacar escogiendo la opción "Atacar" en el menú.
