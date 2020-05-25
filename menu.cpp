@@ -1,58 +1,36 @@
-// Librerías a usar:
-#include <iostream>
-#include <sstream>
-#include <vector>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <string>
-#include <fstream>
-#include <math.h>
-#include<stack>
+/**
+  @file menu.cpp
+  @brief Aqui estan los metodos del menu que permite efectuar las acciones del menu.
+  @author Juan Manuel Perea Coronado - 1926462.
+  @author Johan Esteban Riveros Giraldo - 1927397.
+  @author Erick Santiago Andrade Gutierrez - 1927286.
+  @date 25/05/2020
+*/
 
-// Incluyendo el archivo de definición de la clase:
 #include "menu.h"
 
-using std::string;
 using namespace std;
 
-// Método del constructor:
+/**
+  @brief Metodo constructor que se encarga de iniciar el valor que sera usado dentro de los metodos del menu
+*/
+
 Menu::Menu() {
   Opcion = 0;
 }
-// Método del Destructor:
+
+/**
+  @brief Metodo destructor de la clase menu
+*/
+
 Menu::~Menu() {
 
 }
 
-/*
-CONTRATO: MostrarMenu: Vacío -> Vacío.
-PROPÓSITO: Imprimir las opciones del Menú en la consola.
-CABECERA:
-void Menu::MostrarMenu() {
-
-  cout << "Seleccione una opción: " << endl;
-  cout << "1 - Juego Nuevo." << endl;
-  cout << "2 - Guardar Juego"<<endl;
-  cout << "3 - Cargar Juego." << endl;
-  cout << "4 - Salir." << endl;
-  cout << "5 - Instrucciones." << endl;
-  cout << endl;
-
-}
-
-EJEMPLO: 
-Objeto.MostrarMenu();
-
-Seleccione una opción:
-1 - Juego Nuevo.
-2 - Guardar Juego
-3 - Cargar Juego.
-4 - Salir.
-5 - Instrucciones.
-
-(El método no retorna valores, el método solo imprime en la consola).
+/**
+  @brief Metodo que se encarga de mostrar el menu principal del juego
 */
+
 void Menu::MostrarMenu() {
 
   cout << "Seleccione una opción: " << endl;
@@ -65,58 +43,12 @@ void Menu::MostrarMenu() {
 
 }
 
-/*
-CONTRATO: EjecutarMenu: Numero, Objeto -> Vacío.
-PROPÓSITO: Ejecutar una serie de métodos de la clase del objeto parámetro, de acuerdo a un número ingresado.
-CABECERA:
-void Menu::EjecutarMenu(int Opc, Tablero tablero) {
-  
-  Opcion = Opc;
-
-  if (Opcion == 1) {
-    cout << "¡COMIENZA EL JUEGO!" << endl;
-    tablero.LeerArchivo("Tablero.txt");
-    tablero.ImprimirTablero();
-   
-  }
-  else if(Opcion == 2) {
-    tablero.LeerArchivo("Tablero.txt");
-    tablero.GuardarPartida("PartidaGuardada.txt");
-    cout<<endl;
-    cout<<"El juego ha sido guardado."<<endl;
-    cout<<endl;
-  }
-  else if (Opcion == 3) {
-    cout << "Partida Cargada." << endl;
-    tablero.LeerArchivo("PartidaGuardada.txt");
-    tablero.ImprimirTablero();
-  }
-  else if (Opcion == 4) {
-    cout << "¡Gracias por jugar!" << endl;
-    exit(1);
-  }
-  else if (Opcion == 5) {
-    cout << "Instrucciones: " << endl;
-    cout << "1. Ejecute el programa." << endl;
-    cout << "2. Explore un poco.";
-    cout << "3. Disfrute." << endl;
-    cout << endl;
-  }
-
-}
-
-EJEMPLO: 
-Opcion = 5;
-Tablero tablero;
-Objeto.EjecutarMenu(5, tablero);
-
-Instrucciones: 
-1. Ejecute el programa.
-2. Explore un poco.
-3. Disfrute.
-
-(El método no retorna valores, solo ejecuta métodos de otra clase, que en su mayoría solo imprimen en pantalla).
+/**
+  @brief Metodo que se encarga de ejecutar las funciones del menu principal del juego
+  @param Opc Numero que representa las opciones del menu
+  @param tablero Tablero que se va usar para el juego
 */
+
 void Menu::EjecutarMenu(int Opc, Tablero tablero) {
   
   Opcion = Opc;
@@ -125,10 +57,10 @@ void Menu::EjecutarMenu(int Opc, Tablero tablero) {
     cout << "¡COMIENZA EL JUEGO!" << endl;
     tablero.LeerArchivo("Tablero.txt");
     tablero.ImprimirTablero();
-   
+    cout<<"voy bien 3"<<endl;
+    cout<<"voy bien 4"<<endl;
   }
   else if(Opcion == 2) {
-    tablero.LeerArchivo("Tablero.txt");
     tablero.GuardarPartida("PartidaGuardada.txt");
     cout<<endl;
     cout<<"El juego ha sido guardado."<<endl;
@@ -151,65 +83,106 @@ void Menu::EjecutarMenu(int Opc, Tablero tablero) {
     cout << "3. Disfrute." << endl;
     cout << endl;
   }
-
+  else
+  {
+    cout<<"Esta opcion no es valida"<<endl;
+    cout<<"Porfavor seleccione una de estas: "<<endl;
+    cout<<endl;
+    cout<<endl;
+  }
 }
 
-/*
-CONTRATO: IniciarMenu: Numero, Objeto -> Vacío.
-PROPÓSITO: Reproducir una secuencia de acciones (Mostrar el menú y ejecutar la opción) hasta que el usuario ingrese "4" como el valor de "Opc".
-CABECERA:
-void Menu::IniciarMenu(int Opc,Tablero tablero)
-{
-  
-  while(Opc != 4)
-   {
-     MostrarMenu();
-     cin >> Opc;
-     EjecutarMenu(Opc, tablero);
-   }
 
-}
-
-EJEMPLO: 
-Seleccione una opción:
-1 - Juego Nuevo.
-2 - Guardar Juego
-3 - Cargar Juego.
-4 - Salir.
-5 - Instrucciones.
-
-Opcion = 5;
-Tablero tablero;
-Objeto.EjecutarMenu(5, tablero);
-
-Instrucciones: 
-1. Ejecute el programa.
-2. Explore un poco.
-3. Disfrute.
-
-Seleccione una opción:
-1 - Juego Nuevo.
-2 - Guardar Juego
-3 - Cargar Juego.
-4 - Salir.
-5 - Instrucciones.
-
-Opcion = 4;
-Objeto.EjecutarMenu(4, tablero);
-
-¡Gracias por jugar!
-exit status 1
-(El método no retorna valores, solo ejecuta métodos de esta clase).
+/**
+  @brief Metodo que se iniciar los menus del juego
+  @param Opc Numero que representa las opciones del menu
+  @param tablero Tablero que se va usar para el juego
 */
+
 void Menu::IniciarMenu(int Opc,Tablero tablero)
 {
-  
-  while(Opc != 4)
+  while(Opc != 4 && Opc != 1)
    {
      MostrarMenu();
      cin >> Opc;
      EjecutarMenu(Opc, tablero);
    }
 
+   while(Opc == 1){
+     while(Opc != 3){
+      MenuInterno();
+      cin >> Opc;
+      EjecutarInterno(Opc,tablero);
+   }
+}
 }
 
+/**
+  @brief Metodo que se encarga de mostrar el menu interno del juego
+*/
+
+void Menu::MenuInterno()
+{
+  cout << "Seleccione una opción: " << endl;
+  cout << "1 - Mover." << endl;
+  cout << "2 - Guardar Juego" << endl;
+  cout << "3 - Salir." << endl;
+  cout << endl;
+}
+
+/**
+  @brief Metodo que se encarga de ejecutar las funciones del menu interno del juego
+  @param Opc Numero que representa las opciones del menu
+  @param tablero Tablero que se va usar para el juego
+*/
+
+
+void Menu::EjecutarInterno(int Opc, Tablero tablero)
+{
+  Opcion = Opc;
+
+  if (Opcion == 1) {
+    cout<<"Ejercito numero 1 o 2?:"<<endl;
+    int ejercito;
+    ejercito=0;
+    cin>>ejercito;
+    if(ejercito==1)
+    {
+    cout << "w: Arriba"<<endl;
+    cout << "s: Abajo"<<endl;
+    cout << "a: Izquierda"<<endl;
+    cout << "d: Derecha"<<endl;
+    cout<< "e: terminar de mover"<<endl;
+    tablero.MoverEjercito1();
+    tablero.ImprimirTablero();
+    }
+    else
+    {
+      cout << "w: Arriba"<<endl;
+      cout << "s: Abajo"<<endl;
+      cout << "a: Izquierda"<<endl;
+      cout << "d: Derecha"<<endl;
+    tablero.MoverEjercito2();
+    tablero.ImprimirTablero();
+    }
+  }
+  else if(Opcion == 2) {
+    tablero.GuardarPartida("PartidaGuardada.txt");
+    cout << endl;
+    cout << "El juego ha sido guardado." << endl;
+    cout << endl;
+    tablero.ImprimirTablero();
+  }
+
+  else if (Opcion == 3) {
+    cout << "¡Gracias por jugar esta partida!" << endl << endl;
+    IniciarMenu(Opc, tablero);
+  }
+
+  else {
+    cout<<"Esta opcion no es valida"<<endl;
+    cout<<"Porfavor seleccione una de estas: "<<endl;
+    cout<<endl;
+    cout<<endl;
+  }
+}
