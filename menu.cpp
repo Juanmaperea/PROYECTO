@@ -57,8 +57,8 @@ void Menu::EjecutarMenu(int Opc, Tablero tablero) {
     cout << "¡COMIENZA EL JUEGO!" << endl;
     tablero.LeerArchivo("Tablero.txt");
     tablero.ImprimirTablero();
-    cout<<"voy bien 3"<<endl;
-    cout<<"voy bien 4"<<endl;
+    cout<<endl;
+    cout<<endl;
   }
   else if(Opcion == 2) {
     tablero.GuardarPartida("PartidaGuardada.txt");
@@ -82,6 +82,18 @@ void Menu::EjecutarMenu(int Opc, Tablero tablero) {
     cout << "2. Explore un poco." << endl;
     cout << "3. Disfrute." << endl;
     cout << endl;
+
+    cout << endl;
+    cout << "Para jugar a Code Legends: " << endl;
+    cout << "1. Seleccione la opción 1.Juengo Nuevo." << endl;
+    cout << "2. Escoja el ejército con el que jugará el turno ingresando 1 para el ejército atacante o 2 para ejército defensor." << endl;
+    cout << "3. Escoja la dirección a la que se quiera mover: W para arriba, S para abajo, A para izquierda y D para derecha." << endl;
+    cout << "4. Si lo desea, puede atacar escogiendo la opción Atacar en el menú." << endl;
+    cout << "5. Puede guardar los avances de la partida, seleccionando la opción Guardar partida." << endl;
+    cout << "6. Puede salir del juego primero saliendo de la partida, presionando 3 y luego del programa presionando 4." << endl;
+    cout << endl;
+
+
   }
   else
   {
@@ -127,6 +139,7 @@ void Menu::MenuInterno()
   cout << "1 - Mover." << endl;
   cout << "2 - Guardar Juego" << endl;
   cout << "3 - Salir." << endl;
+  cout << "4 - Atacar." << endl;
   cout << endl;
 }
 
@@ -152,7 +165,7 @@ void Menu::EjecutarInterno(int Opc, Tablero tablero)
     cout << "s: Abajo"<<endl;
     cout << "a: Izquierda"<<endl;
     cout << "d: Derecha"<<endl;
-    cout<< "e: terminar de mover"<<endl;
+    cout << "e: terminar de mover"<<endl;
     tablero.MoverEjercito1();
     tablero.ImprimirTablero();
     }
@@ -177,6 +190,11 @@ void Menu::EjecutarInterno(int Opc, Tablero tablero)
   else if (Opcion == 3) {
     cout << "¡Gracias por jugar esta partida!" << endl << endl;
     IniciarMenu(Opc, tablero);
+  }
+
+  else if (Opcion == 4){
+    cout << "¡Usted ha atacado!" << endl;
+    Ataque.Enfrentamiento(1, 2);
   }
 
   else {

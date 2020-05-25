@@ -104,8 +104,8 @@ void Campo::Defensor(int A) {
 }
 
 /**
-  @brief Metodo indica que un ejercito es el atacante
-  @param A Numero que indica cual ejercito es el atacante
+  @brief Metodo indica que un ejercito tiene menor vida
+  @param A Numero que indica cual es el ejercito
 */
 
 void Campo::MenorVida(int A) {

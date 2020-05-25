@@ -21,7 +21,6 @@ Tablero::Tablero() {
   tablero = new int *[10]; 
   for(int i = 0; i <= 10; i++) {
     *(tablero + i) = new int [9];
-    
   } 
 }
 
@@ -246,8 +245,9 @@ void Tablero::GuardarPartida(string Ruta2) {
 
 void Tablero::MoverEjercito1()
 {
+  do{
     cout<<"Digite una tecla para mover el ejercito"<<endl;
-    do{
+    
     cin>>teclasMovimiento;
 
     teclasMovimiento=tolower(teclasMovimiento);
@@ -257,40 +257,91 @@ void Tablero::MoverEjercito1()
     switch(teclasMovimiento)
     {
       case 'w':
-      cout<<"voy bien 1"<<endl;
-      cout<<posiciony1<<endl;
-      cout<<posicionx1<<endl;
-      cout<<_posiciony1<<endl;
-      cout<<_posicionx1<<endl;
+    
+      if(_posiciony1-1>=0){
+         if(tablero[_posiciony1+1][_posicionx1]!=3)
+        {
       tablero[_posiciony1][_posicionx1]=0;
       _posiciony1=_posiciony1-1;
       tablero[_posiciony1][_posicionx1]=1;
+      }
+        else
+        {
+          cout<<"chocas con la torreta"<<endl;
+        }
+      }
+      else
+      {
+        cout<<"este es el limite del tablero"<<endl;
+      }
       
-      cout<<_posiciony1<<endl;
-      cout<<_posicionx1<<endl;
+      
 
-      cout<<"voy bien 2"<<endl;
+      
       break;
 
       case 's':
+
+      if(_posiciony1+1<=9){
+         if(tablero[_posiciony1+1][_posicionx1]!=3)
+        {
       tablero[_posiciony1][_posicionx1]=0;
       _posiciony1=_posiciony1 + 1;
       tablero[_posiciony1][_posicionx1]=1;
+      }
+        else
+        {
+          cout<<"chocas con la torreta"<<endl;
+        }
+      }
+      else
+      {
+        cout<<"este es el limite del tablero"<<endl;
+      }
       break;
 
       case 'a':
+      if(_posicionx1-1>=0){
+         if(tablero[_posiciony1][_posicionx1-1]!=3)
+        {
       tablero[_posiciony1][_posicionx1]=0;
       _posicionx1=_posicionx1-1;
       tablero[_posiciony1][_posicionx1]=1;
+      }
+        else
+        {
+          cout<<"chocas con la torreta"<<endl;
+        }
+      }
+      else
+      {
+        cout<<"este es el limite del tablero"<<endl;
+      }
+      break;
 
 
       case'd':
+      if(_posicionx1+1<=9){
+         if(tablero[_posiciony1][_posicionx1+1]!=3)
+        {
       tablero[_posiciony1][_posicionx1]=0;
       _posicionx1=_posicionx1+1;
       tablero[_posiciony1][_posicionx1]=1;
+      }
+        else
+        {
+          cout<<"chocas con la torreta"<<endl;
+        }
+      }
+      else
+      {
+        cout<<"este es el limite del tablero"<<endl;
+      }
+      break;
 
-
+      
     }
+    ImprimirTablero();
     }while(teclasMovimiento!='e') ;    
 }
 
@@ -300,57 +351,112 @@ void Tablero::MoverEjercito1()
 
 void Tablero::MoverEjercito2()
 {
+  do{
     cout<<"Digite una tecla para mover el ejercito"<<endl;
     cin>>teclasMovimiento;
 
     teclasMovimiento=tolower(teclasMovimiento);
 
-    posicionx2=_posicionx2;
-    posiciony2=_posiciony2;
+   
 
     switch(teclasMovimiento)
     {
       case 'w':
-      cout<<"voy bien 1"<<endl;
-      cout<<posiciony2<<endl;
-      cout<<posicionx2<<endl;
-      tablero[posiciony2][posicionx2]=0;
+      
+      if(posiciony2-1<=9){
+        if(tablero[posiciony2-1][posicionx2]!=3)
+        {
+        tablero[posiciony2][posicionx2]=0;
       posiciony2=posiciony2-1;
       tablero[posiciony2][posicionx2]=2;
+        }
+        else
+        {
+          cout<<"chocas con la torreta"<<endl;
+        }
       
-      cout<<posiciony1<<endl;
-
-      cout<<"voy bien 2"<<endl;
+      }
+      else
+      {
+        cout<<"este es el limite del tablero"<<endl;
+      }
+      
+      
       break;
 
       case 's':
-      tablero[posiciony2][posicionx2]=0;
+      
+      if(posiciony2+1<=9){
+        
+        if(tablero[posiciony2+1][posicionx2]==3)
+        {
+          tablero[posiciony2][posicionx2]=0;
       posiciony2=posiciony2 + 1;
       tablero[posiciony2][posicionx2]=2;
+        }
+        else
+        {
+          cout<<"chocas con la torreta"<<endl;
+        }
+      
+      }
+      else
+      {
+        cout<<"este es el limite del tablero"<<endl;
+      }
+
       break;
 
       case 'a':
-      tablero[posiciony2][posicionx2]=0;
+      if(posicionx2-1>=0){
+        
+        if(tablero[posiciony2][posicionx2-1]!=3)
+        {
+         tablero[posiciony2][posicionx2]=0;
       posicionx2=posicionx2-1;
       tablero[posiciony2][posicionx2]=2;
+        }
+        else
+        {
+          cout<<"chocas con la torreta"<<endl;
+        }
+        }
+      
+      else
+      {
+        cout<<"este es el limite del tablero"<<endl;
+      }
+      break;
 
 
       case'd':
-      tablero[posiciony2][posicionx2]=0;;
+      if(posiciony2+1<=9){
+        
+        if(tablero[posiciony2][posicionx2+1]!=3)
+        {
+          tablero[posiciony2][posicionx2]=0;;
       posicionx2=posicionx2+1;
       tablero[posiciony2][posicionx2]=2;
-    }
-  for(int i=0;i<10;i++)
-     for (int j = 0; j < 10; j++) {
-      if(tablero[i][j]==2){   
-        _posicionx2=i;_posiciony2=j;                
-        }else if(tablero[i][j]==1){
-          _posicionx1=i;_posiciony1=j;
-                    
         }
-    }      
-}
+        else
+        {
+          cout<<"chocas con la torreta"<<endl;
+        }
+      
+      }
+      else
+      {
+        cout<<"este es el limite del tablero"<<endl;
+      }
+      
+      break;
+    }
 
+    ImprimirTablero();
+  
+  }while(teclasMovimiento!='e');             
+}
+        
 /**
   @brief Metodo encargado de inicializar las posiciones de los ejercitos.
 */
